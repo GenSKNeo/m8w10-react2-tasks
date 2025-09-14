@@ -62,7 +62,7 @@ function UserProfiles() {
     const fetchUsers = async () => {
       try {
         // Fetch data from API
-        const response = await fetch("https://jsonplaceholder.typicode.com/users?_limit=5");
+        const response = await fetch("https://jsonplaceholder.typicode.com/users?_limit=7");
         // Check if response is successful
         if (!response.ok) {
           throw new Error("Failed to fetch user data");
