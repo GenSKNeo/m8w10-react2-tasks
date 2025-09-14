@@ -1,0 +1,253 @@
+/* App.css */
+
+/* Reset default styles for consistent rendering across browsers */
+* {
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+}
+
+/* Base styles for the body element */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+  line-height: 1.6; /* Improve readability with increased line height */
+  color: #333; /* Dark gray text color for good contrast */
+  background-color: #f5f7fa; /* Light background color */
+  padding: 20px; /* Add padding around the content */
+}
+
+/* Main app container styles */
+.App {
+  max-width: 1200px; /* Maximum width for large screens */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Header styles */
+.app-header {
+  text-align: center; /* Center align header content */
+  margin-bottom: 40px; /* Space below header */
+  padding: 20px; /* Internal spacing */
+  background: linear-gradient(135deg, #6e8efb, #a777e3); /* Gradient background */
+  color: white; /* White text for contrast */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.app-header h1 {
+  margin-bottom: 10px; /* Space below heading */
+  font-weight: 600; /* Semi-bold font weight */
+}
+
+.app-header p {
+  opacity: 0.9; /* Slightly transparent paragraph */
+}
+
+/* Container for card components */
+.cards-container {
+  display: grid; /* Use CSS Grid for layout */
+  grid-template-columns: 1fr; /* Single column by default */
+  gap: 30px; /* Space between grid items */
+}
+
+/* Medium screen responsive styles (tablets) */
+@media (min-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+  }
+  
+  /* Make the last card span two columns */
+  .cards-container > :last-child {
+    grid-column: span 2;
+  }
+}
+
+/* Large screen responsive styles (desktops) */
+@media (min-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+  }
+  
+  /* Reset span for last card on large screens */
+  .cards-container > :last-child {
+    grid-column: auto;
+  }
+}
+
+/* Card component styles */
+.card {
+  background: white; /* White background */
+  border-radius: 12px; /* Rounded corners */
+  padding: 25px; /* Internal spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  display: flex; /* Use flexbox for internal layout */
+  flex-direction: column; /* Stack children vertically */
+  height: 100%; /* Full height of grid cell */
+}
+
+/* Card hover effects */
+.card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
+}
+
+/* Card heading styles */
+.card h2 {
+  margin-bottom: 20px; /* Space below heading */
+  color: #2c3e50; /* Dark blue-gray color */
+  border-bottom: 2px solid #a777e3; /* Accent border */
+  padding-bottom: 10px; /* Space between text and border */
+  font-size: 1.4rem; /* Slightly larger font size */
+}
+
+/* Primary button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #6e8efb, #a777e3); /* Gradient background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  padding: 12px 24px; /* Button padding */
+  border-radius: 6px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 1rem; /* Base font size */
+  font-weight: 500; /* Medium font weight */
+  transition: all 0.2s ease; /* Smooth transition for hover effects */
+  align-self: flex-start; /* Align to start of flex container */
+}
+
+/* Button hover effects */
+.btn-primary:hover {
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 4px 8px rgba(106, 142, 251, 0.4); /* Glow effect */
+}
+
+/* Color input field styles */
+.color-input {
+  padding: 12px; /* Internal spacing */
+  border: 2px solid #e1e5e9; /* Light border */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 1rem; /* Base font size */
+  margin-bottom: 15px; /* Space below input */
+  transition: border-color 0.3s; /* Smooth border color transition */
+  width: 100%; /* Full width */
+}
+
+/* Focus state for input field */
+.color-input:focus {
+  outline: none; /* Remove default outline */
+  border-color: #6e8efb; /* Change border color on focus */
+}
+
+/* Container for color box and text */
+.color-box-container {
+  margin-top: 15px; /* Space above container */
+  text-align: center; /* Center align content */
+}
+
+/* Color box styles */
+.color-box {
+  width: 150px; /* Fixed width */
+  height: 150px; /* Fixed height */
+  margin: 0 auto 15px; /* Center with margin below */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Color box hover effect */
+.color-box:hover {
+  transform: scale(1.05); /* Slight scale up on hover */
+}
+
+/* Loading message styles */
+.loading {
+  text-align: center; /* Center align text */
+  padding: 30px; /* Internal spacing */
+  font-style: italic; /* Italic text */
+  color: #7f8c8d; /* Gray text color */
+}
+
+/* User selector container styles */
+.user-selector {
+  margin-bottom: 20px; /* Space below selector */
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center align items vertically */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 10px; /* Space between items */
+}
+
+/* User dropdown styles */
+.user-dropdown {
+  padding: 8px 12px; /* Internal spacing */
+  border-radius: 6px; /* Rounded corners */
+  border: 2px solid #e1e5e9; /* Light border */
+  background-color: white; /* White background */
+  font-size: 0.9rem; /* Slightly smaller font */
+}
+
+/* User profile container styles */
+.user-profile {
+  background: #f8f9fa; /* Light gray background */
+  padding: 20px; /* Internal spacing */
+  border-radius: 8px; /* Rounded corners */
+  border-left: 4px solid #6e8efb; /* Accent border on left */
+}
+
+/* User profile heading styles */
+.user-profile h3 {
+  color: #2c3e50; /* Dark blue-gray color */
+  margin-bottom: 15px; /* Space below heading */
+  font-size: 1.3rem; /* Slightly larger font */
+}
+
+/* User profile paragraph styles */
+.user-profile p {
+  margin-bottom: 8px; /* Space below paragraphs */
+  padding-bottom: 8px; /* Space between text and border */
+  border-bottom: 1px solid #eee; /* Subtle separator */
+}
+
+/* Remove border from last paragraph */
+.user-profile p:last-child {
+  border-bottom: none;
+}
+
+/* Fade-in animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start invisible */
+    transform: translateY(10px); /* Start slightly lower */
+  }
+  to {
+    opacity: 1; /* End fully visible */
+    transform: translateY(0); /* End at normal position */
+  }
+}
+
+/* Class to apply fade-in animation */
+.fade-in {
+  animation: fadeIn 0.5s ease forwards; /* Apply animation */
+}
+
+/* Mobile-specific responsive adjustments */
+@media (max-width: 480px) {
+  body {
+    padding: 10px; /* Reduce padding on small screens */
+  }
+  
+  .card {
+    padding: 20px; /* Reduce card padding */
+  }
+  
+  .app-header {
+    padding: 15px; /* Reduce header padding */
+  }
+  
+  .app-header h1 {
+    font-size: 1.5rem; /* Smaller heading on mobile */
+  }
+  
+  .user-selector {
+    flex-direction: column; /* Stack selector items vertically */
+    align-items: flex-start; /* Align to start */
+  }
+}
